@@ -1,5 +1,17 @@
+require 'resque-loner/legacy_helpers'
+
 module Resque
   class Job
+    extend Resque::Plugins::Loner::LegacyHelpers
+
+    def self.get_args_from_payload payload
+      if constantize(payload['class']).instance_variable_get(:@__is_throttled_job)
+        payload['args'][1 .. -1]
+      else
+        payload['args']
+      end
+    end
+
     def before_reserve_hooks
       @before_reserve_hooks ||= Plugin.before_reserve_hooks(payload_class)
     end
