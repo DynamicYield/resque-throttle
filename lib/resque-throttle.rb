@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'resque'
 require 'resque-loner'
+require 'resque-reserve-hooks'
 require 'resque-throttle/throttled_job'
-require 'resque-throttle-ext/job'
-require 'resque-throttle-ext/plugin'

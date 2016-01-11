@@ -8,8 +8,9 @@ Gem::Specification.new do |s|
   s.email       = 'support@dynamicyield.com'
   s.files       = ['LICENSE', 'Gemfile', "#{s.name}.gemspec"] + Dir['lib/*.rb'] + Dir['lib/**/*.rb']
   s.homepage    = ''
-  s.license     = 'Proprietary (license required)'
+  s.license     = 'MIT'
 
   s.add_dependency 'resque', '~> 1.20'
+  s.add_dependency 'resque-reserve-hooks', '~> 0.0.1'
   s.add_dependency 'resque-loner', '1.3.0'
 end
