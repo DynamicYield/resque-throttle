@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name        = 'resque-throttle'
-  s.version     = '0.0.1'
-  s.date        = '2015-04-26'
+  s.version     = '0.0.2'
+  s.date        = '2016-01-11'
   s.summary     = 'Throttled unique Resque jobs'
   s.description = 'Throttled unique Resque jobs'
   s.authors     = ['Dynamic Yield']
