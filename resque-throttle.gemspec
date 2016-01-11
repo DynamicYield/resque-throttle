@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.description = 'Throttled unique Resque jobs'
   s.authors     = ['Dynamic Yield']
   s.email       = 'support@dynamicyield.com'
-  s.files       = ['lib/resque-throttle.rb']
+  s.files       = ['LICENSE', 'Gemfile', "#{s.name}.gemspec"] + Dir['lib/*.rb'] + Dir['lib/**/*.rb']
   s.homepage    = ''
   s.license     = 'Proprietary (license required)'
 
