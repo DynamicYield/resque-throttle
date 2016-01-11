@@ -8,14 +8,19 @@ module Resque
 
           @__is_throttled_job = true
           @throttle_window = nil
+          @throttle_delay = nil
         end
       end
 
       module ClassMethods
         def before_reserve_resque_throttle *args
+          throttle_delay =
+            instance_variable_get(:@throttle_delay) ||
+            (respond_to?(:throttle_delay) && klass.throttle_delay) ||
+            0
           if args.length > 1 &&
              args[0].is_a?(Fixnum)
-            args[0] < Time.now.to_i
+            args[0] + throttle_delay < Time.now.to_i
           else
             true
           end
